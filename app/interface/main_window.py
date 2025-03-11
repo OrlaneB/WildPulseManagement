@@ -1,17 +1,25 @@
-from PySide6.QtWidgets import QMainWindow, QLabel, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QMainWindow, QStackedWidget
+from app.interface.parameter_window import ParameterWindow
+from app.interface.createMainView import createMainView
+
+
+#Main Window contains 3 parts : header, right and left
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Mon Application PySide")  # Titre de la fenêtre
-        self.setGeometry(100, 100, 800, 600)  # Position et taille
+        self.setWindowTitle("Wild Pulse Management")
+        #self.setGeometry(100, 100, 800, 600)  # Position et taille
 
-        # Contenu de la fenêtre
-        layout = QVBoxLayout()
-        label = QLabel("Bienvenue dans mon application !")
-        layout.addWidget(label)
+        self.stackedWidget = QStackedWidget()
 
-        container = QWidget()
-        container.setLayout(layout)
-        self.setCentralWidget(container)
+        self.paramView = ParameterWindow(self.stackedWidget)
+        self.mainView = createMainView(self.stackedWidget,self.paramView)
+
+        self.stackedWidget.addWidget(self.mainView)
+        self.stackedWidget.addWidget(self.paramView)
+
+        self.setCentralWidget(self.stackedWidget)
+
+
