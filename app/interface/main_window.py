@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
 
         self.paramView = ParameterWindow(self.stackedWidget)
         self.newClientView = NewClientWindow(self.stackedWidget)
-        self.contractView = ContractWindow(self.stackedWidget)
+        self.contractView = ContractWindow(self.stackedWidget,self.newClientView)
 
         views = {
             "paramView":self.paramView,
