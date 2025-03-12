@@ -3,6 +3,7 @@ from app.logic.readJSONfile import readJSONFile
 from app.logic.addNewClientLogic.createFileStructure import createFileStructure
 from app.logic.addNewClientLogic.createPDF import createPDF
 from app.logic.changeView import changeView
+from app.logic.addGroupInJSONFile import addGroupInJSONFile
 import sys
 import os
 
@@ -20,7 +21,10 @@ def addNewClient(groupInfo,stackedWidget):
         sys.exit("Ce client existe déjà")
     else :
         os.mkdir(pathFileGroup)
-        createFileStructure(pathFileGroup)
+        check = addGroupInJSONFile(groupInfo)
+        if check["error"] is False :
+            createFileStructure(pathFileGroup)
+        print(check["message"])
 
 
     textPDF = f"""Le groupe {groupInfo["groupName"]}
