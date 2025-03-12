@@ -4,3 +4,4 @@ def changeView(stackedWidget,toView):
         stackedWidget.setCurrentIndex(0)
     else:
         stackedWidget.setCurrentWidget(toView)
+        print(f"succesfully changed to new view")

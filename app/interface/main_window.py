@@ -1,9 +1,10 @@
 from PySide6.QtWidgets import QMainWindow, QStackedWidget
 from app.interface.parameter_window import ParameterWindow
 from app.interface.createMainView import createMainView
+from app.interface.new_client_window import NewClientWindow
+from app.interface.contract_window import ContractWindow
 
 
-#Main Window contains 3 parts : header, right and left
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -15,10 +16,21 @@ class MainWindow(QMainWindow):
         self.stackedWidget = QStackedWidget()
 
         self.paramView = ParameterWindow(self.stackedWidget)
-        self.mainView = createMainView(self.stackedWidget,self.paramView)
+        self.newClientView = NewClientWindow(self.stackedWidget)
+        self.contractView = ContractWindow(self.stackedWidget)
+
+        views = {
+            "paramView":self.paramView,
+            "newClientView":self.newClientView,
+            "contractView":self.contractView
+        }
+
+        self.mainView = createMainView(self.stackedWidget,views)
 
         self.stackedWidget.addWidget(self.mainView)
         self.stackedWidget.addWidget(self.paramView)
+        self.stackedWidget.addWidget(self.newClientView)
+        self.stackedWidget.addWidget(self.contractView)
 
         self.setCentralWidget(self.stackedWidget)
 

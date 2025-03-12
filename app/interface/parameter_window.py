@@ -28,7 +28,7 @@ class ParameterWindow(QWidget) :
         inputFilePath = QLineEdit()
         inputFilePath.setPlaceholderText("C:/Utilisateurs...")
         inputFilePath.setText(filePath)
-        inputFilePath.textChanged.connect(lambda text: handleChangeInput(text, filePathRef))
+        inputFilePath.textChanged.connect(lambda text: handleChangeInput(text, filePathRef[0]))
         layout.addWidget(inputFilePath)
 
         sendButton = QPushButton("Envoyer")
