@@ -1,7 +1,8 @@
 import json
+from app.logic.getJSONPath import getJSONPath
 
 def readJSONFile (name,path,value=None):
-    with open(name+".json","r",encoding="utf-8") as file:
+    with open(getJSONPath(),"r",encoding="utf-8") as file:
         data = json.load(file)
 
     if value is None :
@@ -9,6 +10,6 @@ def readJSONFile (name,path,value=None):
     else :
         data[path] = value
         print(value)
-        with open(name+".json","w",encoding="utf-8") as file :
+        with open(getJSONPath(),"w",encoding="utf-8") as file :
             json.dump(data,file,indent=4)
         print (f"{name} updated successfully !")

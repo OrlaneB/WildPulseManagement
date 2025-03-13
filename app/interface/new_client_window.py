@@ -1,6 +1,5 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit
 from app.logic.changeView import changeView
-from app.logic.handleChangeInput import handleChangeInput
 from app.logic.addNewInput import addNewInput
 from app.logic.handleChangeMembersName import handleChangeMembersName
 from app.logic.addNewClient import addNewClient

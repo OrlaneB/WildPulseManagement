@@ -1,7 +1,8 @@
 import json
+from app.logic.getJSONPath import getJSONPath
 
 def addGroupInJSONFile (groupInfo):
-    with open("app/logic/parameters.json","r",encoding="utf-8") as file:
+    with open(getJSONPath(),"r",encoding="utf-8") as file:
         data = json.load(file)
 
     print(data)
@@ -13,7 +14,7 @@ def addGroupInJSONFile (groupInfo):
     
     groupsJSON.append(groupInfo)
 
-    with open("app/logic/parameters.json","w",encoding="utf-8") as file:
+    with open(getJSONPath(),"w",encoding="utf-8") as file:
         json.dump(data,file,indent=4)
         return {"error":False,"message":"Nouveau groupe dans paramètres"}
 

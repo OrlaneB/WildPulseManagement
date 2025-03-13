@@ -1,14 +1,4 @@
 {
-    "pathClientFile": "C:\\Users\\B\\Desktop\\clients",
-    "groups": [
-        {
-            "groupName": "AA",
-            "members": [
-                "Alice",
-                "Merida",
-                "Aurore"
-            ],
-            "beginningYear": "2011"
-        }
-    ]
+    "pathClientFile": "yep",
+    "groups": []
 }
