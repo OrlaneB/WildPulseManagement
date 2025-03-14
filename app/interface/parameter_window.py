@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit
 from app.logic.changeView import changeView
 from app.logic.readJSONfile import readJSONFile
+from app.logic.sendButtonParametes import sendButtonParameters
 
 
 class ParameterWindow(QWidget) :
@@ -19,8 +20,6 @@ class ParameterWindow(QWidget) :
 
         layout.addWidget(QLabel("URL dossier clients"))
 
-        # filePath = readJSONFile("app/logic/parameters","pathClientFile")
-        # print(filePath)
 
         filePathRef = [readJSONFile("app/logic/parameters","pathClientFile")]
 
@@ -31,7 +30,7 @@ class ParameterWindow(QWidget) :
         layout.addWidget(inputFilePath)
 
         sendButton = QPushButton("Envoyer")
-        sendButton.clicked.connect(lambda: readJSONFile("app/logic/parameters","pathClientFile",filePathRef[0]))
+        sendButton.clicked.connect(lambda: sendButtonParameters(filePathRef[0],stackedWidget))
         layout.addWidget(sendButton)
 
         def handleInputChange(text):
