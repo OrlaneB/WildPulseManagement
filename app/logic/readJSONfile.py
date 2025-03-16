@@ -12,4 +12,4 @@ def readJSONFile (name,path,value=None):
         print(value)
         with open(getJSONPath(),"w",encoding="utf-8") as file :
             json.dump(data,file,indent=4)
-        print (f"{name} updated successfully !")
+        

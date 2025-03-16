@@ -1,4 +1,33 @@
 {
     "pathClientFile": "C:\\Users\\B\\Desktop\\clients",
-    "groups": []
+    "groups": [
+        {
+            "groupName": "KK",
+            "members": [
+                "O"
+            ],
+            "beginningYear": "2013"
+        },
+        {
+            "groupName": "MM",
+            "members": [
+                "A"
+            ],
+            "beginningYear": "2021"
+        },
+        {
+            "groupName": "OO",
+            "members": [
+                "A"
+            ],
+            "beginningYear": "2000"
+        },
+        {
+            "groupName": "PP",
+            "members": [
+                "A"
+            ],
+            "beginningYear": "2003"
+        }
+    ]
 }

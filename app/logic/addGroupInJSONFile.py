@@ -9,7 +9,7 @@ def addGroupInJSONFile (groupInfo):
     groupsJSON = data["groups"]
 
     #On vérifie que le groupe n'existe pas.
-    if any(group.groupName==groupInfo["groupName"] for group in groupsJSON) :
+    if any(group["groupName"]==groupInfo["groupName"] for group in groupsJSON) :
         return {"error":True,"message":"Le groupe existe déjà"}
     
     groupsJSON.append(groupInfo)

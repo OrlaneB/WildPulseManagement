@@ -24,11 +24,13 @@ class NewClientWindow(QWidget) :
 
         layout.addWidget(QLabel("Nom du groupe"))
         inputGroupName = QLineEdit()
+        inputGroupName.setText(groupInfo["groupName"])
         inputGroupName.textChanged.connect(lambda text: groupInfo.__setitem__("groupName", text))
         layout.addWidget(inputGroupName)
 
         layout.addWidget(QLabel("Année de formation"))
         inputBeginningYear = QLineEdit()
+        inputBeginningYear.setText(groupInfo["beginningYear"])
         inputBeginningYear.textChanged.connect(lambda text: groupInfo.__setitem__("beginningYear", text))
         layout.addWidget(inputBeginningYear)
 
@@ -49,7 +51,7 @@ class NewClientWindow(QWidget) :
         layout.addWidget(inputMember)
 
         sendButton = QPushButton("Créer nouveau client")
-        sendButton.clicked.connect(lambda:addNewClient(groupInfo,stackedWidget))
+        sendButton.clicked.connect(lambda:addNewClient(groupInfo,stackedWidget,layout))
         layout.addWidget(sendButton)
 
         
