@@ -3,6 +3,7 @@ from app.interface.parameter_window import ParameterWindow
 from app.interface.createMainView import createMainView
 from app.interface.new_client_window import NewClientWindow
 from app.interface.contract_window import ContractWindow
+from app.logic.getSizeWindow import getSizeWindow
 
 
 
@@ -12,6 +13,8 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Wild Pulse Management")
         #self.setGeometry(100, 100, 800, 600)  # Position et taille
+
+        getSizeWindow(self)
 
         self.stackedWidget = QStackedWidget()
 

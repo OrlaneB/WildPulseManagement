@@ -33,7 +33,7 @@ class groupChoice(QWidget):
 
         groups = readJSONFile("app/logic/parameters","groups")
 
-        addMessage(self.layout, json.dumps(groups, indent=2))
+        # addMessage(self.layout, json.dumps(groups, indent=2))
 
 
         for group in groups:
